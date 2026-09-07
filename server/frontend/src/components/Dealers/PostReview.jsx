@@ -66,12 +66,12 @@ const PostReview = () => {
   
   const get_dealer = async ()=>{
     const res = await fetch(dealer_url, {
-      method: "GET"
+        method: "GET"
     });
     const retobj = await res.json();
-  
-    if(retobj.status === 200) {
-      setDealer(retobj.dealer)
+
+    if(retobj.status === 200 && retobj.dealer.length > 0) {
+        setDealer(retobj.dealer[0])
     }
   }
 
