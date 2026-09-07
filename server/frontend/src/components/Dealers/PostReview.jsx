@@ -57,21 +57,21 @@ const PostReview = () => {
   });
 
   const json = await res.json();
+  console.log("add_review response:", json);
   if (json.status === 200) {
       window.location.href = window.location.origin+"/dealer/"+id;
   }
 
   }
+  
   const get_dealer = async ()=>{
     const res = await fetch(dealer_url, {
       method: "GET"
     });
     const retobj = await res.json();
-    
+  
     if(retobj.status === 200) {
-      let dealerobjs = Array.from(retobj.dealer)
-      if(dealerobjs.length > 0)
-        setDealer(dealerobjs[0])
+      setDealer(retobj.dealer)
     }
   }
 
