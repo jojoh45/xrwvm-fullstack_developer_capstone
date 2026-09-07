@@ -9,8 +9,6 @@ import review_icon from "../assets/reviewbutton.png"
 import Header from '../Header/Header';
 
 const Dealer = () => {
-
-
   const [dealer, setDealer] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [unreviewed, setUnreviewed] = useState(false);
