@@ -98,6 +98,7 @@ def get_dealer_reviews(request, dealer_id):
         for review_detail in reviews:
             response = analyze_review_sentiments(review_detail['review'])
             print(response)
+<<<<<<< HEAD
             # Guard against the sentiment analyzer being unreachable or
             # returning an unexpected payload, so one bad review doesn't
             # crash the whole request.
@@ -105,6 +106,9 @@ def get_dealer_reviews(request, dealer_id):
                 review_detail['sentiment'] = response['sentiment']
             else:
                 review_detail['sentiment'] = 'unknown'
+=======
+            review_detail['sentiment'] = response['sentiment']
+>>>>>>> 611adb0d2815f8fbb93cd7553ac601cd0e13e24d
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
